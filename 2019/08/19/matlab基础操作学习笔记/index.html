@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+
+
+
+
+<html class="theme-next muse use-motion" lang="zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.3.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.3.0">
+  <link rel="mask-icon" href="/images/logo.svg?v=7.3.0" color="#222">
+
+<link rel="stylesheet" href="/css/main.css?v=7.3.0">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '7.3.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: 'Kopieren',
+      copy_success: 'Kopiert',
+      copy_failure: 'Kopieren fehlgeschlagen'
+    }
+  };
+</script>
+
+  <meta name="description" content="一、常用的一些基本数学函数 绘制曲线函数    用直线画出y=f(x)的函数图像    plot(x,y)    占坑补图         用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑补图 * 定义变量范围   定义域为0到2*pi，步距为0.0">
+<meta name="keywords" content="matlab基操">
+<meta property="og:type" content="article">
+<meta property="og:title" content="matlab基础操作学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/matlab基础操作学习笔记/index.html">
+<meta property="og:site_name" content="Loserisme">
+<meta property="og:description" content="一、常用的一些基本数学函数 绘制曲线函数    用直线画出y=f(x)的函数图像    plot(x,y)    占坑补图         用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑补图 * 定义变量范围   定义域为0到2*pi，步距为0.0">
+<meta property="og:locale" content="zh">
+<meta property="og:updated_time" content="2019-08-19T08:24:09.937Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="matlab基础操作学习笔记">
+<meta name="twitter:description" content="一、常用的一些基本数学函数 绘制曲线函数    用直线画出y=f(x)的函数图像    plot(x,y)    占坑补图         用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑补图 * 定义变量范围   定义域为0到2*pi，步距为0.0">
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/matlab基础操作学习笔记/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>matlab基础操作学习笔记 | Loserisme</title>
+  <meta name="generator" content="Hexo 3.9.0">
+  
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh">
+
+  <div class="container sidebar-position-left">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Loserisme</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">希望有一天才华能配得上梦想的技术青年小卢瑟</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Navigationsleiste an/ausschalten">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+      
+      
+      
+        
+        <li class="menu-item menu-item-home">
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+
+  </li>
+      
+      
+      
+        
+        <li class="menu-item menu-item-archives">
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+
+  </li>
+  </ul>
+
+    
+
+</nav>
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content page-post-detail">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/matlab基础操作学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tang Peng">
+      <meta itemprop="description" content="记录那些学过的知识踩过的坑，软硬通吃">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Loserisme">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">matlab基础操作学习笔记
+
+          
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+
+              
+                
+              
+
+              <time title="Erstellt: 2019-08-19 16:23:10 / Geändert am: 16:24:09" itemprop="dateCreated datePublished" datetime="2019-08-19T16:23:10+08:00">2019-08-19</time>
+            </span>
+          
+            
+
+            
+          
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="一、常用的一些基本数学函数"><a href="#一、常用的一些基本数学函数" class="headerlink" title="一、常用的一些基本数学函数"></a>一、常用的一些基本数学函数</h2><ul>
+<li>绘制曲线函数<blockquote>
+<p align="left">   用直线画出y=f(x)的函数图像</p> 
+  plot(x,y) 
+  占坑补图
+</blockquote>
+</li>
+</ul>
+<blockquote>
+ <p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
+    plot(x,y,'--')
+    占坑补图
+<p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
+    plot(x,y,'*')
+    占坑补图
+* 定义变量范围
+<p align="left">  定义域为0到2*pi，步距为0.01</p> 
+    x=0，0.01，2*pi
+* 打开图像中网格
+<p align="left">  画完图打开图像中的网格</p> 
+    grid on
+* 在一幅图中画多个曲线
+<p align="left"> 在一幅图中画出多个个曲线，在画完一幅图后输入以下命令</p> 
+    hold on
+* 定义符号式
+<p align="left"> 我的理解为定义一个未赋值的变量，可能理解有偏差，先占坑，以后明白了再来改</p> 
+    syms x,y
+    定义了两个符号变量x，y
+* 合并同类项
+<p align="left"> 合并同类项命令，了解不多，先占坑，以后来补充</p> 
+    collect(f,x)
+* 因式分解
+<p align="left">因式分解命令，了解不多，先占坑，以后来补</p>
+    factor(f)
+<font color="red" size="3" face="黑体">注:合并同类项和因式分解都是对符号表达式（占坑，明白这个定义后再来补充）进行操作。</font>
+* 求极限函数
+<p align="left">求函数极限，依旧是针对符号表达式</p>
+    limit(f,x,left or right)
+    f为函数，x为符号变量，left为左极限，right为右极限
+    如果函数为 limit(f,x)
+    说明无双边极限
+    如果函数为 limit(f,x,left,right)
+    说明函数有左右极限  //这种情况还需要了解，占坑
+* 求导求差分函数
+<p align="left">此函数用来求导和求差分，依旧是针对符号表达式</p>
+    diff(y)
+    占坑
+* 求积分函数
+<p align="left">此函数用来求积分，依旧是针对符号表达式</p>
+    int(y,x,m,n)
+    m,n分别为左右极限
+</blockquote>
+<h2 id="二、实际中遇到的一些问题"><a href="#二、实际中遇到的一些问题" class="headerlink" title="二、实际中遇到的一些问题"></a>二、实际中遇到的一些问题</h2><p>1.线性规划问题</p>
+<blockquote>
+<p>函数linprog(st为约束)<br><font color="red" size="3" face="黑体">matlab线性规划函数不等式定义为&lt;（小于）例如x&lt;10</font><br>        1. x=linprog(f,A,B);求解minf’x,约束条件为Ax&lt;=b.<br>        2. x=linprog(f,A,B,Aeq,beq);Aeq,beq意思添加等式约束，Aeq*x=beq。若没有等式约束，Aeq=[],beq=[]。<br>        3. x=linprog(f,A,B,Aeq,beq,lb,ub);lb,ub为变量x的下限和上限<br>        4. </p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+      
+
+      <footer class="post-footer">
+          
+            
+          
+          <div class="post-tags">
+            
+              <a href="/tags/matlab基操/" rel="tag"># matlab基操</a>
+            
+          </div>
+        
+
+        
+
+      </footer>
+    
+  </div>
+  
+  
+  
+  </article>
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Tang Peng</p>
+  <div class="site-description motion-element" itemprop="description">记录那些学过的知识踩过的坑，软硬通吃</div>
+</div>
+  <nav class="site-state motion-element">
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">Artikel</span>
+        </a>
+      </div>
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+        
+        
+          
+        
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">schlagwörter</span>
+        
+      </div>
+    
+  </nav>
+
+
+
+
+        </div>
+      </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、常用的一些基本数学函数"><span class="nav-number">1.</span> <span class="nav-text">一、常用的一些基本数学函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、实际中遇到的一些问题"><span class="nav-number">2.</span> <span class="nav-text">二、实际中遇到的一些问题</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tang Peng</span>
+</div>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.3.0</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        <span>0%</span>
+      </div>
+
+    
+
+  </div>
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="/js/utils.js?v=7.3.0"></script><script src="/js/motion.js?v=7.3.0"></script>
+<script src="/js/schemes/muse.js?v=7.3.0"></script>
+<script src="/js/next-boot.js?v=7.3.0"></script>
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+  
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
+</body>
+</html>
