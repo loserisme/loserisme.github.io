@@ -5,20 +5,20 @@
   
 
   
-  <title>test | Loserisme</title>
+  <title>Loserisme</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录那些学过的知识踩过的坑，软硬通吃">
+  <meta name="description" content="MATLAB学习笔记 作者：唐鹏 === 一、常用的一些基本数学函数 --- * 绘制曲线函数 &amp;gt;    用直线画出y=f(x)的函数图像      plot(x,y)      占坑补图       用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑">
 <meta name="keywords" content="EE">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+<meta property="og:title" content="Loserisme">
 <meta property="og:url" content="http://yoursite.com/2019/08/19/test/index.html">
 <meta property="og:site_name" content="Loserisme">
-<meta property="og:description" content="记录那些学过的知识踩过的坑，软硬通吃">
+<meta property="og:description" content="MATLAB学习笔记 作者：唐鹏 === 一、常用的一些基本数学函数 --- * 绘制曲线函数 &amp;gt;    用直线画出y=f(x)的函数图像      plot(x,y)      占坑补图       用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2019-08-19T08:07:02.113Z">
+<meta property="og:updated_time" content="2019-08-19T08:14:02.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description" content="记录那些学过的知识踩过的坑，软硬通吃">
+<meta name="twitter:title" content="Loserisme">
+<meta name="twitter:description" content="MATLAB学习笔记 作者：唐鹏 === 一、常用的一些基本数学函数 --- * 绘制曲线函数 &amp;gt;    用直线画出y=f(x)的函数图像      plot(x,y)      占坑补图       用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;--&apos;)     占坑补图    用符号“--”画出y=f(x)的函数图像      plot(x,y,&apos;*&apos;)     占坑">
   
     <link rel="alternate" href="/atom.xml" title="Loserisme" type="application/atom+xml">
   
@@ -72,36 +72,98 @@
         <section id="main"><article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/08/19/test/" class="article-date">
-  <time datetime="2019-08-19T08:00:54.000Z" itemprop="datePublished">2019-08-19</time>
+  <time datetime="2019-08-19T08:00:54.789Z" itemprop="datePublished">2019-08-19</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      test
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <center>MATLAB学习笔记</center>
+<font size="4" face="黑体">作者：唐鹏
+===
+一、常用的一些基本数学函数
+---
+* 绘制曲线函数
+> <p align="left">   用直线画出y=f(x)的函数图像</p> 
+    plot(x,y) 
+    占坑补图
+
+<blockquote>
+ <p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
+    plot(x,y,'--')
+    占坑补图
+<p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
+    plot(x,y,'*')
+    占坑补图
+* 定义变量范围
+<p align="left">  定义域为0到2*pi，步距为0.01</p> 
+    x=0，0.01，2*pi
+* 打开图像中网格
+<p align="left">  画完图打开图像中的网格</p> 
+    grid on
+* 在一幅图中画多个曲线
+<p align="left"> 在一幅图中画出多个个曲线，在画完一幅图后输入以下命令</p> 
+    hold on
+* 定义符号式
+<p align="left"> 我的理解为定义一个未赋值的变量，可能理解有偏差，先占坑，以后明白了再来改</p> 
+    syms x,y
+    定义了两个符号变量x，y
+* 合并同类项
+<p align="left"> 合并同类项命令，了解不多，先占坑，以后来补充</p> 
+    collect(f,x)
+* 因式分解
+<p align="left">因式分解命令，了解不多，先占坑，以后来补</p>
+    factor(f)
+<font color="red" size="3" face="黑体">注:合并同类项和因式分解都是对符号表达式（占坑，明白这个定义后再来补充）进行操作。</font>
+* 求极限函数
+<p align="left">求函数极限，依旧是针对符号表达式</p>
+    limit(f,x,left or right)
+    f为函数，x为符号变量，left为左极限，right为右极限
+    如果函数为 limit(f,x)
+    说明无双边极限
+    如果函数为 limit(f,x,left,right)
+    说明函数有左右极限  //这种情况还需要了解，占坑
+* 求导求差分函数
+<p align="left">此函数用来求导和求差分，依旧是针对符号表达式</p>
+    diff(y)
+    占坑
+* 求积分函数
+<p align="left">此函数用来求积分，依旧是针对符号表达式</p>
+    int(y,x,m,n)
+    m,n分别为左右极限
+</blockquote>
+<h2 id="二、实际中遇到的一些问题"><a href="#二、实际中遇到的一些问题" class="headerlink" title="二、实际中遇到的一些问题"></a>二、实际中遇到的一些问题</h2><p>1.线性规划问题</p>
+<blockquote>
+<p>函数linprog(st为约束)<br><font color="red" size="3" face="黑体">matlab线性规划函数不等式定义为&lt;（小于）例如x&lt;10</font><br>        1. x=linprog(f,A,B);求解minf’x,约束条件为Ax&lt;=b.<br>        2. x=linprog(f,A,B,Aeq,beq);Aeq,beq意思添加等式约束，Aeq*x=beq。若没有等式约束，Aeq=[],beq=[]。<br>        3. x=linprog(f,A,B,Aeq,beq,lb,ub);lb,ub为变量x的下限和上限<br>        4. </p>
+</blockquote>
+</font>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/19/test/" data-id="cjzi496370000v4unn1qq5kil" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/19/test/" data-id="cjzi4igf00000okunq0wshw5k" class="article-share-link">Share</a>
       
       
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2019/08/19/stm32杂记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          stm32杂记
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -134,7 +196,11 @@
       <ul>
         
           <li>
-            <a href="/2019/08/19/test/">test</a>
+            <a href="/2019/08/19/stm32杂记/">stm32杂记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/19/test/">(no title)</a>
           </li>
         
       </ul>
