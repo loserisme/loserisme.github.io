@@ -55,32 +55,45 @@
   };
 </script>
 
-  <meta name="description" content="记录那些学过的知识踩过的坑，软硬通吃">
+  <meta name="description" content="一、基础知识 stm32命名规则    寄存器描述表   3.术语表  4.启动模式  5.开漏电路与推挽电路推挽电路：示意图：一个P型场效应管管接VCC，N型场效应管接GND，输入低电平，P型管导通，输出高电平，输入端高电平时，N型管导通，输出低电平。推挽电路只能输出高低电平。  场效应管  源自百度百科场效应晶体管（Field Effect Transistor缩写(FET)）简称场效应管。主">
 <meta name="keywords" content="EE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Loserisme">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stm32f103系列杂记">
+<meta property="og:url" content="http://yoursite.com/2019/08/19/stm32f103系列杂记/index.html">
 <meta property="og:site_name" content="Loserisme">
-<meta property="og:description" content="记录那些学过的知识踩过的坑，软硬通吃">
+<meta property="og:description" content="一、基础知识 stm32命名规则    寄存器描述表   3.术语表  4.启动模式  5.开漏电路与推挽电路推挽电路：示意图：一个P型场效应管管接VCC，N型场效应管接GND，输入低电平，P型管导通，输出高电平，输入端高电平时，N型管导通，输出低电平。推挽电路只能输出高低电平。  场效应管  源自百度百科场效应晶体管（Field Effect Transistor缩写(FET)）简称场效应管。主">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5Cstm32%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E5%AF%84%E5%AD%98%E5%99%A8%E6%8F%8F%E8%BF%B0%E7%BC%A9%E5%86%99%E8%A1%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E6%9C%AF%E8%AF%AD%E8%A1%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E5%90%AF%E5%8A%A8%E6%A8%A1%E5%BC%8F.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E6%97%B6%E9%92%9F%E6%A0%91.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%E4%BD%8E%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E9%85%8D%E7%BD%AE%E9%AB%98%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%BE%93%E5%85%A5%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E6%95%B0%E6%8D%AE%E8%BE%93%E5%87%BA%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E4%BD%8D%E8%AE%BE%E7%BD%AE%E6%B8%85%E9%99%A4%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5C%E7%AB%AF%E5%8F%A3%E4%BD%8D%E6%B8%85%E9%99%A4%E5%AF%84%E5%AD%98%E5%99%A8.png">
+<meta property="og:updated_time" content="2019-08-19T09:07:14.331Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Loserisme">
-<meta name="twitter:description" content="记录那些学过的知识踩过的坑，软硬通吃">
-  <link rel="canonical" href="http://yoursite.com/">
+<meta name="twitter:title" content="stm32f103系列杂记">
+<meta name="twitter:description" content="一、基础知识 stm32命名规则    寄存器描述表   3.术语表  4.启动模式  5.开漏电路与推挽电路推挽电路：示意图：一个P型场效应管管接VCC，N型场效应管接GND，输入低电平，P型管导通，输出高电平，输入端高电平时，N型管导通，输出低电平。推挽电路只能输出高低电平。  场效应管  源自百度百科场效应晶体管（Field Effect Transistor缩写(FET)）简称场效应管。主">
+<meta name="twitter:image" content="c:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5Cstm32%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99.png">
+  <link rel="canonical" href="http://yoursite.com/2019/08/19/stm32f103系列杂记/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false,
+    isHome: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>Loserisme</title>
+  <title>stm32f103系列杂记 | Loserisme</title>
   <meta name="generator" content="Hexo 3.9.0">
   
 
@@ -187,10 +200,11 @@
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content page-home">
+          <div id="content" class="content page-post-detail">
             
-  <section id="posts" class="posts-expand">
-      
+
+  <div id="posts" class="posts-expand">
+    
 
   <article class="post" itemscope itemtype="http://schema.org/Article">
   
@@ -209,9 +223,8 @@
       <meta itemprop="name" content="Loserisme">
     </span>
       <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/19/stm32f103系列杂记/" class="post-title-link" itemprop="url">stm32f103系列杂记</a>
+        <h1 class="post-title" itemprop="name headline">stm32f103系列杂记
+
           
         </h1>
 
@@ -245,7 +258,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h2><ol>
+        <h2 id="一、基础知识"><a href="#一、基础知识" class="headerlink" title="一、基础知识"></a>一、基础知识</h2><ol>
 <li>stm32命名规则</li>
 </ol>
 <p><img src="C:%5CUsers%5CTang%5CDesktop%5CMD%5Cstm32%5Cstm32%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99.png" alt="stm32命名规则"></p>
@@ -419,157 +432,43 @@
 3. MOS管的工作温度</code></pre></li>
 </ol>
 
-        
-      
     </div>
 
     
     
     
+        
+      
+
       <footer class="post-footer">
-          <div class="post-eof"></div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+              
+                <a href="/2019/08/19/matlab基础操作学习笔记/" rel="next" title="matlab基础操作学习笔记">
+                  <i class="fa fa-chevron-left"></i> matlab基础操作学习笔记
+                </a>
+              
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+              
+            </div>
+          </div>
         
       </footer>
+    
   </div>
   
   
   
   </article>
 
-    
-      
-
-  <article class="post" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/19/matlab基础操作学习笔记/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Tang Peng">
-      <meta itemprop="description" content="记录那些学过的知识踩过的坑，软硬通吃">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Loserisme">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-            
-            <a href="/2019/08/19/matlab基础操作学习笔记/" class="post-title-link" itemprop="url">matlab基础操作学习笔记</a>
-          
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
-
-              
-                
-              
-
-              <time title="Erstellt: 2019-08-19 16:23:10 / Geändert am: 16:24:09" itemprop="dateCreated datePublished" datetime="2019-08-19T16:23:10+08:00">2019-08-19</time>
-            </span>
-          
-            
-
-            
-          
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="一、常用的一些基本数学函数"><a href="#一、常用的一些基本数学函数" class="headerlink" title="一、常用的一些基本数学函数"></a>一、常用的一些基本数学函数</h2><ul>
-<li>绘制曲线函数<blockquote>
-<p align="left">   用直线画出y=f(x)的函数图像</p> 
-  plot(x,y) 
-  占坑补图
-</blockquote>
-</li>
-</ul>
-<blockquote>
- <p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
-    plot(x,y,'--')
-    占坑补图
-<p align="left">   用符号“--”画出y=f(x)的函数图像</p> 
-    plot(x,y,'*')
-    占坑补图
-* 定义变量范围
-<p align="left">  定义域为0到2*pi，步距为0.01</p> 
-    x=0，0.01，2*pi
-* 打开图像中网格
-<p align="left">  画完图打开图像中的网格</p> 
-    grid on
-* 在一幅图中画多个曲线
-<p align="left"> 在一幅图中画出多个个曲线，在画完一幅图后输入以下命令</p> 
-    hold on
-* 定义符号式
-<p align="left"> 我的理解为定义一个未赋值的变量，可能理解有偏差，先占坑，以后明白了再来改</p> 
-    syms x,y
-    定义了两个符号变量x，y
-* 合并同类项
-<p align="left"> 合并同类项命令，了解不多，先占坑，以后来补充</p> 
-    collect(f,x)
-* 因式分解
-<p align="left">因式分解命令，了解不多，先占坑，以后来补</p>
-    factor(f)
-<font color="red" size="3" face="黑体">注:合并同类项和因式分解都是对符号表达式（占坑，明白这个定义后再来补充）进行操作。</font>
-* 求极限函数
-<p align="left">求函数极限，依旧是针对符号表达式</p>
-    limit(f,x,left or right)
-    f为函数，x为符号变量，left为左极限，right为右极限
-    如果函数为 limit(f,x)
-    说明无双边极限
-    如果函数为 limit(f,x,left,right)
-    说明函数有左右极限  //这种情况还需要了解，占坑
-* 求导求差分函数
-<p align="left">此函数用来求导和求差分，依旧是针对符号表达式</p>
-    diff(y)
-    占坑
-* 求积分函数
-<p align="left">此函数用来求积分，依旧是针对符号表达式</p>
-    int(y,x,m,n)
-    m,n分别为左右极限
-</blockquote>
-<h2 id="二、实际中遇到的一些问题"><a href="#二、实际中遇到的一些问题" class="headerlink" title="二、实际中遇到的一些问题"></a>二、实际中遇到的一些问题</h2><p>1.线性规划问题</p>
-<blockquote>
-<p>函数linprog(st为约束)<br><font color="red" size="3" face="黑体">matlab线性规划函数不等式定义为&lt;（小于）例如x&lt;10</font><br>        1. x=linprog(f,A,B);求解minf’x,约束条件为Ax&lt;=b.<br>        2. x=linprog(f,A,B,Aeq,beq);Aeq,beq意思添加等式约束，Aeq*x=beq。若没有等式约束，Aeq=[],beq=[]。<br>        3. x=linprog(f,A,B,Aeq,beq,lb,ub);lb,ub为变量x的下限和上限<br>        4. </p>
-</blockquote>
-
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-          <div class="post-eof"></div>
-        
-      </footer>
   </div>
-  
-  
-  
-  </article>
-
-    
-  </section>
-
-  
 
 
           </div>
@@ -588,8 +487,17 @@
 
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
 
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -626,6 +534,23 @@
 
         </div>
       </div>
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、基础知识"><span class="nav-number">1.</span> <span class="nav-text">一、基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、时钟系统"><span class="nav-number">2.</span> <span class="nav-text">二、时钟系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、外设"><span class="nav-number">3.</span> <span class="nav-text">三、外设</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、通信协议"><span class="nav-number">4.</span> <span class="nav-text">四、通信协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、应用篇"><span class="nav-number">5.</span> <span class="nav-text">五、应用篇</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
     </div>
   </aside>
@@ -714,5 +639,8 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.3.0"></script><script src="/js/post-details.js?v=7.3.0"></script>
+
+
 </body>
 </html>
